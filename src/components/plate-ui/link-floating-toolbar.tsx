@@ -82,6 +82,17 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
           placeholder="Paste link"
         />
       </div>
+{/* 
+      <div className="flex items-center">
+        <div className="flex items-center pl-3 text-muted-foreground">
+          <Icons.link className="size-4" />
+        </div>
+
+        <FloatingLinkUrlInput
+          className={inputVariants({ variant: 'ghost', h: 'sm' })}
+          placeholder="Paste text"
+        />
+      </div> */}
 
       <Separator />
 
@@ -101,7 +112,7 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
   const editContent = editState.isEditing ? (
     input
   ) : (
-    <div className="box-content flex h-9 items-center gap-1">
+    <div className="box-content flex items-center gap-1 h-9">
       <button
         type="button"
         className={buttonVariants({ variant: 'ghost', size: 'sm' })}
