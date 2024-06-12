@@ -20,13 +20,13 @@ import { FloatingToolbar } from '@/components/plate-ui/floating-toolbar';
 import { FloatingToolbarButtons } from '@/components/plate-ui/floating-toolbar-buttons';
 import { MentionCombobox } from '@/components/plate-ui/mention-combobox';
 import { deserializeHtml } from './deserializeHtml';
-import { LINK_SPLITER } from '@/lib/link';
+import { LINK_SPLITTER } from '@/lib/link';
 
 export default function PlateEditor() {
   const containerRef = useRef(null);
 
   const data = '把数据放到这里面就可以传了';
-  const htmlValue = `<a href='https://github.com/udecode/plate/${LINK_SPLITER}${data}'>111</a><h1>333</h1>`;
+  const htmlValue = `<a href='https://github.com/udecode/plate/${LINK_SPLITTER}${data}'>111</a><h1>333</h1>`;
   const initialValue = useMemo(() => {
     // const tmpEditor = createPlateEditor({ plugins });
     return deserializeHtml(plugins, { element: htmlValue });

@@ -82,8 +82,8 @@ export function LinkFloatingToolbar({ state }: LinkFloatingToolbarProps) {
           placeholder="Paste link"
         />
       </div>
-{/* 
-      <div className="flex items-center">
+
+      {/* <div className="flex items-center">
         <div className="flex items-center pl-3 text-muted-foreground">
           <Icons.link className="size-4" />
         </div>

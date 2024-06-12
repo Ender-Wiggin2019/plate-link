@@ -4,6 +4,7 @@ import { PlateElement, useElement } from '@udecode/plate-common';
 import { TLinkElement, useLink } from '@udecode/plate-link';
 
 import { Tooltip, TooltipContent, TooltipTrigger } from './tooltip';
+import { LINK_SPLITTER } from '@/lib/link';
 
 export const LinkElement = withRef<typeof PlateElement>(
   ({ className, children, ...props }, ref) => {
@@ -12,14 +13,20 @@ export const LinkElement = withRef<typeof PlateElement>(
     // element.url = element.url.split('----')[0];
     const { props: linkProps } = useLink({ element });
     console.log(element, props, linkProps);
-    const tooltipContent = (props.element.url as any).split('----')[1];
+    const tooltipContent = (props.element.url as any).split(LINK_SPLITTER)[1];
+    // const tooltipContent = (linkProps.href as any).split('----')[1];
+    // const tooltipContent = (element.url as any).split('----')[1];
+
+
     // (props.element.url as any) = (props.element.url as any).split('----')[0];
+    // element.url = (element.url as any).split('----')[0];
+    // (linkProps.href as any) = (linkProps.href as any).split(LINK_SPLITTER)[0];
+    // (linkProps.href as any) = '';
 
-    (linkProps.href as any) = (linkProps.href as any).split('----')[0];
 
-    // if (!props['aria-valuetext']) {
-    //   props['aria-valuetext'] = tooltipContent;
-    // }
+    if (!props['aria-valuetext']) {
+      props['aria-valuetext'] = tooltipContent;
+    }
 
     return (
       <Tooltip>

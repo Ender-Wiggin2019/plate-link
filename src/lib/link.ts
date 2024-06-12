@@ -1,1 +1,1 @@
-export const LINK_SPLITER = '----';
+export const LINK_SPLITTER = '?extra-data=';
