@@ -23,8 +23,6 @@ export const deserializeHtml = <V extends Value>(
   if (typeof element === 'string') {
     element = htmlStringToDOMNode(element);
   }
-
-  // console.log('dsdsdsdsd', element);
   const fragment = deserializeHtmlElement(editor, element) as any[];
 
   return normalizeDescendantsToDocumentFragment(editor, {

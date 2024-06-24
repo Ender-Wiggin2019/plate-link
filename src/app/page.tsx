@@ -1,12 +1,13 @@
 import Link from 'next/link';
 
 import { siteConfig } from '@/config/site';
-import PlateEditor from '@/components/plate-editor';
+// import PlateEditor from '@/components/plate-editor';
 import { buttonVariants } from '@/components/plate-ui/button';
-
+import dynamic from 'next/dynamic';
+const PlateDy = dynamic(() => import("@/components/plate-editor"), {ssr: false});
 export default function IndexPage() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+    <section className="container grid items-center gap-6 pt-6 pb-8 md:py-10">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
           Plate Playground.
@@ -38,7 +39,7 @@ export default function IndexPage() {
       </div>
 
       <div className="max-w-[1336px] rounded-lg border bg-background shadow">
-        <PlateEditor />
+        <PlateDy />
       </div>
     </section>
   );

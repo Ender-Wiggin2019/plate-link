@@ -25,8 +25,8 @@ import { LINK_SPLITTER } from '@/lib/link';
 export default function PlateEditor() {
   const containerRef = useRef(null);
 
-  const data = '把数据放到这里面就可以传了';
-  const htmlValue = `<a href='https://github.com/udecode/plate/${LINK_SPLITTER}${data}'>111</a><h1>333</h1>`;
+  const data = '使用该插件以管理链接';
+  const htmlValue = `<h1>Plate Link 调研</h1><a href='https://platejs.org/docs/link${LINK_SPLITTER}${data}'>Plate Link 官方文档</a>`;
   const initialValue = useMemo(() => {
     // const tmpEditor = createPlateEditor({ plugins });
     return deserializeHtml(plugins, { element: htmlValue });
